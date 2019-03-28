@@ -11,5 +11,13 @@ return [
     | while creating the chart to ignore this value.
     |
     */
-    'default_library' => 'Chartjs',
+    'default' => [
+        'type'              =>  'line',
+        'library'           =>  'google',
+        'elemenet_label'    =>  'Element',
+        'title'             =>  'MyChart',
+        'height'            =>  400,
+        'weidth'            =>  500,
+        'responsive'        =>  true,
+    ],
 ];

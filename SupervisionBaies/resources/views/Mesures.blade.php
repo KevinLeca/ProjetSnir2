@@ -8,21 +8,9 @@
     <hr style="color: #222222">
 </div>
 
-@if(count($Mesures) > 0)
-@foreach($Mesures as $Mesure)
-<ul class="list-group">
-    <li class="list-group-item">
-        temperature: {{$Mesure->temperature}}
-    </li>
-    <li class="list-group-item">
-        humidite: {{$Mesure->humidite}}
-    </li>
-    <li class="list-group-item">
-        datetime: {{$Mesure->datetime}}
-    </li>
-</ul>
-@endforeach
-@endif
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.6/highcharts.js" charset="utf-8"></script>        
+{!! $chart->script() !!}
+{!! $chart->container() !!}
 
 @endsection
 

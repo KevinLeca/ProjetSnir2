@@ -86,10 +86,10 @@
                             
                             <!-- Affichage de l'intitulé d'alerte selon le booléen (1=temperature, 0=humidité) -->
                             @if($Alerte->type_alerte == 1)
-                                <td>Température trop élevé</td>
+                                <td>Température élevée</td>
                             @endif
                             @if($Alerte->type_alerte == 0)
-                                <td>Humidité trop élevée</td>
+                                <td>Humidité élevée</td>
                             @endif
                             <td>{{$Alerte->datetime}}</td>
                             <!-- ----------------------------------------------------------------------------- -->

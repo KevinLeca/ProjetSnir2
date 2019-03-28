@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Charts\MyChart;
+
 class RequestController extends Controller {
 
     public function getMesures() {
@@ -12,8 +14,13 @@ class RequestController extends Controller {
                 ->select('mesures_baies.datetime', 'mesures_baies.temperature', 'mesures_baies.humidite')
                 ->where('baies.id_baie', '=', '1')
                 ->get();
-        dd($Mesures);
-        //return view('Mesures')->with('Mesures', $Mesures);
+        
+        $chart = new MyChart();
+        $chart->labels(['one', 'two', 'three', ]);
+        $chart->dataset("My dataset", "line", [1,2,3,5,6,4,7,2,1,4,6,9,8,7]);
+        $chart->dataset("My dataset 2", "line", [3,2,1,2,5,6,4,7,8,3,1,4,5]);
+
+        return view('Mesures', ['chart' => $chart]);
     }
 
     public function getAlertes() {
