@@ -9,16 +9,40 @@ use App\Charts\MyChart;
 class RequestController extends Controller {
 
     public function getMesures() {
-        $Mesures = \Illuminate\Support\Facades\DB::table('mesures_baies')
-                ->join('baies', 'baies.id_baie', '=', 'mesures_baies.id_baie')
-                ->select('mesures_baies.datetime', 'mesures_baies.temperature', 'mesures_baies.humidite')
-                ->where('baies.id_baie', '=', '1')
+        $labels = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('datetime')
+                ->where('id_baie', '=', '1')
                 ->get();
         
+        $temperatures = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('temperature')
+                ->where('id_baie', '=', '1')
+                ->get();
+        
+        $humidites = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('humidite')
+                ->where('id_baie', '=', '1')
+                ->get();
+        
+        $dataTemp = array();
+        foreach ($temperatures as $temp){
+            array_push($dataTemp, $temp->temperature);
+        }
+        
+        $dataHum = array();
+        foreach ($humidites as $humidite){
+            array_push($dataHum, $humidite->humidite);
+        }
+        
+        $dataLabels = array();
+        foreach ($labels as $label){
+            array_push($dataLabels, $label->datetime);
+        }
+        
         $chart = new MyChart();
-        $chart->labels(['one', 'two', 'three', ]);
-        $chart->dataset("My dataset", "line", [1,2,3,5,6,4,7,2,1,4,6,9,8,7]);
-        $chart->dataset("My dataset 2", "line", [3,2,1,2,5,6,4,7,8,3,1,4,5]);
+        $chart->labels($dataLabels);
+        $chart->dataset("températures", "line", $dataTemp);
+        $chart->dataset("humidité", "line", $dataHum);
 
         return view('Mesures', ['chart' => $chart]);
     }

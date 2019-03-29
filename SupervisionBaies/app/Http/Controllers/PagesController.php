@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Charts\MyChart;
+
 class PagesController extends Controller
 {
     public function getHome(){
@@ -12,22 +14,197 @@ class PagesController extends Controller
     }   
     
     public function getB(){
-        return view('MesuresB');
+        $labels = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('datetime')
+                ->where('id_baie', '=', '1')
+                ->get();
+        
+        $temperatures = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('temperature')
+                ->where('id_baie', '=', '1')
+                ->get();
+        
+        $humidites = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('humidite')
+                ->where('id_baie', '=', '1')
+                ->get();
+        
+        $dataTemp = array();
+        foreach ($temperatures as $temp){
+            array_push($dataTemp, $temp->temperature);
+        }
+        
+        $dataHum = array();
+        foreach ($humidites as $humidite){
+            array_push($dataHum, $humidite->humidite);
+        }
+        
+        $dataLabels = array();
+        foreach ($labels as $label){
+            array_push($dataLabels, $label->datetime);
+        }
+        
+        $chart = new MyChart();
+        $chart->labels($dataLabels);
+        $chart->dataset("températures", "line", $dataTemp);
+        $chart->dataset("humidité", "line", $dataHum);
+
+        return view('MesuresB', ['chart' => $chart]);
     }   
     
     public function getC(){
-        return view('MesuresC');
+        $labels = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('datetime')
+                ->where('id_baie', '=', '2')
+                ->get();
+        
+        $temperatures = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('temperature')
+                ->where('id_baie', '=', '2')
+                ->get();
+        
+        $humidites = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('humidite')
+                ->where('id_baie', '=', '2')
+                ->get();
+        
+        $dataTemp = array();
+        foreach ($temperatures as $temp){
+            array_push($dataTemp, $temp->temperature);
+        }
+        
+        $dataHum = array();
+        foreach ($humidites as $humidite){
+            array_push($dataHum, $humidite->humidite);
+        }
+        
+        $dataLabels = array();
+        foreach ($labels as $label){
+            array_push($dataLabels, $label->datetime);
+        }
+        
+        $chart = new MyChart();
+        $chart->labels($dataLabels);
+        $chart->dataset("températures", "line", $dataTemp);
+        $chart->dataset("humidité", "line", $dataHum);
+
+        return view('MesuresC', ['chart' => $chart]);
     }   
     
     public function getD(){
-        return view('MesuresD');
+        $labels = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('datetime')
+                ->where('id_baie', '=', '3')
+                ->get();
+        
+        $temperatures = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('temperature')
+                ->where('id_baie', '=', '3')
+                ->get();
+        
+        $humidites = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('humidite')
+                ->where('id_baie', '=', '3')
+                ->get();
+        
+        $dataTemp = array();
+        foreach ($temperatures as $temp){
+            array_push($dataTemp, $temp->temperature);
+        }
+        
+        $dataHum = array();
+        foreach ($humidites as $humidite){
+            array_push($dataHum, $humidite->humidite);
+        }
+        
+        $dataLabels = array();
+        foreach ($labels as $label){
+            array_push($dataLabels, $label->datetime);
+        }
+        
+        $chart = new MyChart();
+        $chart->labels($dataLabels);
+        $chart->dataset("températures", "line", $dataTemp);
+        $chart->dataset("humidité", "line", $dataHum);
+
+        return view('MesuresD', ['chart' => $chart]);
     }   
     
     public function getF(){
-        return view('MesuresF');
+        $labels = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('datetime')
+                ->where('id_baie', '=', '4')
+                ->get();
+        
+        $temperatures = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('temperature')
+                ->where('id_baie', '=', '4')
+                ->get();
+        
+        $humidites = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('humidite')
+                ->where('id_baie', '=', '4')
+                ->get();
+        
+        $dataTemp = array();
+        foreach ($temperatures as $temp){
+            array_push($dataTemp, $temp->temperature);
+        }
+        
+        $dataHum = array();
+        foreach ($humidites as $humidite){
+            array_push($dataHum, $humidite->humidite);
+        }
+        
+        $dataLabels = array();
+        foreach ($labels as $label){
+            array_push($dataLabels, $label->datetime);
+        }
+        
+        $chart = new MyChart();
+        $chart->labels($dataLabels);
+        $chart->dataset("températures", "line", $dataTemp);
+        $chart->dataset("humidité", "line", $dataHum);
+
+        return view('MesuresF', ['chart' => $chart]);
     }   
     
     public function getG(){
-        return view('MesuresG');
+        $labels = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('datetime')
+                ->where('id_baie', '=', '5')
+                ->get();
+        
+        $temperatures = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('temperature')
+                ->where('id_baie', '=', '5')
+                ->get();
+        
+        $humidites = \Illuminate\Support\Facades\DB::table('mesures_baies')
+                ->select('humidite')
+                ->where('id_baie', '=', '5')
+                ->get();
+        
+        $dataTemp = array();
+        foreach ($temperatures as $temp){
+            array_push($dataTemp, $temp->temperature);
+        }
+        
+        $dataHum = array();
+        foreach ($humidites as $humidite){
+            array_push($dataHum, $humidite->humidite);
+        }
+        
+        $dataLabels = array();
+        foreach ($labels as $label){
+            array_push($dataLabels, $label->datetime);
+        }
+        
+        $chart = new MyChart();
+        $chart->labels($dataLabels);
+        $chart->dataset("températures", "line", $dataTemp);
+        $chart->dataset("humidité", "line", $dataHum);
+
+        return view('MesuresG', ['chart' => $chart]);
     }   
 }
