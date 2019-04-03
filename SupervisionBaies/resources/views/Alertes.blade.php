@@ -10,10 +10,11 @@
 
 <!-- ------------------------- Formulaire de recherche ------------------------ -->
 <div class="container-fluid bg-1">
-    {!! Form::open(['url' => 'Alertes/submit']) !!}
+    {!! Form::open(['url' => 'Alertes/submit']) !!} <!-- ouverture du formulaire laravel -->
     <table class="table table-bordered">
         <tr>
-            <td>
+            <!-- inputs de type date pour la selection de la plage horaire -->
+            <td>                
                 <label for="startdate">Date début:</label>
                 <input type="date" id="date-start" name="date-start" value="0000-00-00">
             </td>
@@ -21,6 +22,7 @@
                 <label for="stopdate">Date fin:</label>
                 <input type="date" id="date-stop" name="date-stop" value="0000-00-00">
             </td>
+            <!-- --------------------------------------------------------- -->
             <td rowspan="2" style="padding-top: 2%">
                 <!-- Checkbox pour les alertes acquittées -->
                 {!! Form::checkbox('checkbox') !!}
@@ -34,6 +36,7 @@
             </td>
         </tr>
         <tr>
+            <!-- inputs de type time pour affiner la plage horaire -->
             <td>
                 <label for="starttime">Heure début:</label>
                 <input type="time" id="time-start" name="time-start"></td>
@@ -41,11 +44,11 @@
                 <label for="stoptime">Heure fin:</label>
                 <input type="time" id="time-stop" name="time-stop">
             </td>
-            <td></td>
+            <!-- ------------------------------------------------- -->
         </tr>
 
     </table>
-    {!! Form::close() !!}
+    {!! Form::close() !!} <!-- fermeture du formulaire laravel -->
 </div>
 <!-- -------------------------------------------------------------------------- -->
 
@@ -58,15 +61,15 @@
                 <tr>
                     <th style="text-align: center">Baie</th>
                     <th style="text-align: center">Type d'incident</th>
-                    <th style="text-align: center">Date</th>
+                    <th style="text-align: center">Date d'alerte</th>
                     <th style="text-align: center">Acquitter</th>
                 </tr>
             </thead>
             <tbody>
-                @if(count($Alertes) > 0)
-                    @foreach($Alertes as $Alerte)
+                @if(count($Alertes) > 0) <!-- je verifie d'abords la présence d'alertes -->
+                    @foreach($Alertes as $Alerte) <!-- J'affiche les informations relatives à chaque alertes -->
                         <tr>
-                            <!-- Affichage du bâtiment selon l'id de la baie -->
+                            <!-- Affichage du bâtiment selon l'id de la baie A MODIFIER INTELLIGEMMENT -->
                             @if($Alerte->id_baie == 1)
                                 <td>Bâtiment B</td>
                             @endif
@@ -94,17 +97,18 @@
                             <td>{{$Alerte->datetime}}</td>
                             <!-- ----------------------------------------------------------------------------- -->
                             
-                            <!-- Bouton pour acquitter -->
+                            <!-- Bouton pour acquitter (seulement si l'alerte ne l'est pas)-->
                             <td>
                                 @if($Alerte->etat_alerte == 0)
                                 {!! Form::open(['url' => 'Alertes/acquitter']) !!}
+                                <!-- Creation de champ cachés pur pouvoir acquitter une alerte -->
                                     {{ Form::hidden('alerteID', $Alerte->id_alertes) }}
+                                    {{ Form::hidden('baieID', $Alerte->id_baie) }}
+                                <!-- --------------------------------------------------------- -->
                                     {!! Form::submit('ACQUITTER') !!}
                                 {!! Form::close() !!}
                                 @else
-                                <form class="form-inline" action="Alertes"> 
-                                    <button type="submit" class="btn btn-default" disabled>ACQUITTER</button>
-                                </form> 
+                                {{$Alerte->updated_at}}
                                 @endif
                             </td>
                             <!-- --------------------- -->
@@ -112,7 +116,7 @@
                     @endforeach                
             </tbody>
         </table>
-        @else
+        @else <!--  -->
             <p style="font-size: 20px; text-align: center">- Aucune alertes -</p>
         @endif
 

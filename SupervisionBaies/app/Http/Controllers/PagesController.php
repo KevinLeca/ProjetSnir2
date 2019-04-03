@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Session;
+
 use App\Charts\MyChart;
 
 class PagesController extends Controller
@@ -45,9 +47,10 @@ class PagesController extends Controller
         }
         
         $chart = new MyChart();
+        $chart->title("Mesures bâtiment B");
         $chart->labels($dataLabels);
-        $chart->dataset("températures", "line", $dataTemp);
-        $chart->dataset("humidité", "line", $dataHum);
+        $chart->dataset("températures (°C)", "line", $dataTemp);
+        $chart->dataset("humidité (%)", "line", $dataHum);
 
         return view('MesuresB', ['chart' => $chart]);
     }   
@@ -84,9 +87,10 @@ class PagesController extends Controller
         }
         
         $chart = new MyChart();
+        $chart->title("Mesures bâtiment C");
         $chart->labels($dataLabels);
-        $chart->dataset("températures", "line", $dataTemp);
-        $chart->dataset("humidité", "line", $dataHum);
+        $chart->dataset("températures (°C)", "line", $dataTemp);
+        $chart->dataset("humidité (%)", "line", $dataHum);
 
         return view('MesuresC', ['chart' => $chart]);
     }   
@@ -123,9 +127,10 @@ class PagesController extends Controller
         }
         
         $chart = new MyChart();
+        $chart->title("Mesures bâtiment D");
         $chart->labels($dataLabels);
-        $chart->dataset("températures", "line", $dataTemp);
-        $chart->dataset("humidité", "line", $dataHum);
+        $chart->dataset("températures (°C)", "line", $dataTemp);
+        $chart->dataset("humidité (%)", "line", $dataHum);
 
         return view('MesuresD', ['chart' => $chart]);
     }   
@@ -162,9 +167,10 @@ class PagesController extends Controller
         }
         
         $chart = new MyChart();
+        $chart->title("Mesures bâtiment F");
         $chart->labels($dataLabels);
-        $chart->dataset("températures", "line", $dataTemp);
-        $chart->dataset("humidité", "line", $dataHum);
+        $chart->dataset("températures (°C)", "line", $dataTemp);
+        $chart->dataset("humidité (%)", "line", $dataHum);
 
         return view('MesuresF', ['chart' => $chart]);
     }   
@@ -201,9 +207,10 @@ class PagesController extends Controller
         }
         
         $chart = new MyChart();
+        $chart->title("Mesures bâtiment G");
         $chart->labels($dataLabels);
-        $chart->dataset("températures", "line", $dataTemp);
-        $chart->dataset("humidité", "line", $dataHum);
+        $chart->dataset("températures (°C)", "line", $dataTemp);
+        $chart->dataset("humidité (%)", "line", $dataHum);
 
         return view('MesuresG', ['chart' => $chart]);
     }   

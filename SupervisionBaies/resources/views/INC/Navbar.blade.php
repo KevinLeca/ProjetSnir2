@@ -10,6 +10,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
+                <!-- Item mesures contenant les differentes baies -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="MesuresB">Mesures<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -20,8 +21,10 @@
                         <li><a id="g" href="MesuresG">Bâtiment G</a></li>
                     </ul>
                 </li>
+                <!-- Item Alertes -->
                 <li><a href="/SupervisionBaies/Alertes">Alertes</a></li>
             </ul>
+            <!-- Item Pour accéder aux autres interfaces du projet -->
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="http://172.18.58.251/nagios">Nagios</a></li>
                 <li><a href="/ConfigurationBaies">Configuration</a></li>

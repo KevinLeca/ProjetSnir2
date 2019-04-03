@@ -11,7 +11,6 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
         <!-- <script src="script.js"></script> -->
         <script src="http://code.jquery.com/jquery-latest.js"></script>
-
         <!-- Pour mes graphs-->
         <script src="https://code.highcharts.com/stock/highstock.js"></script>
         <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
@@ -22,7 +21,7 @@
 
 
     <body>
-        @include('INC.Navbar')
-        @yield('content')
+        @include('INC.Navbar') <!-- Inclusion de la barre de navigation -->
+        @yield('content')   <!-- emplacement du contenue, soit mes vues.blade.php -->
     </body>
 </html>
