@@ -17,6 +17,7 @@ Route::get('/', 'PagesController@getHome');
 /* PAGES DE MESURES */
 Route::get('/Mesures', 'RequestController@getMesures');
 Route::get('/MesuresB', 'PagesController@getB');
+Route::post('MesuresB/submit', 'PagesController@getBRecherche');
 Route::get('/MesuresC', 'PagesController@getC');
 Route::get('/MesuresD', 'PagesController@getD');
 Route::get('/MesuresF', 'PagesController@getF');

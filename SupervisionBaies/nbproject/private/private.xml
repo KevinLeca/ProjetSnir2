@@ -5,7 +5,9 @@
         <group>
             <file>file:/home/USERS/ELEVES/SNIR2017/kleca/Documents/SupervisionDeBaies/remote/SupervisionBaies/resources/views/Alertes.blade.php</file>
             <file>file:/home/USERS/ELEVES/SNIR2017/kleca/Documents/SupervisionDeBaies/remote/SupervisionBaies/app/Http/Controllers/RequestController.php</file>
+            <file>file:/home/USERS/ELEVES/SNIR2017/kleca/Documents/SupervisionDeBaies/remote/SupervisionBaies/app/Http/Controllers/PagesController.php</file>
             <file>file:/home/USERS/ELEVES/SNIR2017/kleca/Documents/SupervisionDeBaies/remote/SupervisionBaies/routes/web.php</file>
+            <file>file:/home/USERS/ELEVES/SNIR2017/kleca/Documents/SupervisionDeBaies/remote/SupervisionBaies/resources/views/MesuresB.blade.php</file>
         </group>
     </open-files>
 </project-private>
