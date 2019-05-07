@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/USERS/ELEVES/SNIR2017/ecousin/remote/ConfigurationBaies/routes/web.php</file>
+            <file>file:/home/USERS/ELEVES/SNIR2017/ecousin/remote/ConfigurationBaies/resources/views/inc/configSeuilsBaies.blade.php</file>
+            <file>file:/home/USERS/ELEVES/SNIR2017/ecousin/remote/ConfigurationBaies/resources/views/contacts.blade.php</file>
+            <file>file:/home/USERS/ELEVES/SNIR2017/ecousin/remote/ConfigurationBaies/resources/views/layout/layout.blade.php</file>
+            <file>file:/home/USERS/ELEVES/SNIR2017/ecousin/remote/ConfigurationBaies/app/Http/Controllers/BaieController.php</file>
+            <file>file:/home/USERS/ELEVES/SNIR2017/ecousin/remote/ConfigurationBaies/resources/views/baieB.blade.php</file>
+            <file>file:/home/USERS/ELEVES/SNIR2017/ecousin/remote/ConfigurationBaies/resources/views/inc/configSeuilsEquipements.blade.php</file>
+            <file>file:/home/USERS/ELEVES/SNIR2017/ecousin/remote/ConfigurationBaies/resources/views/inc/navbar.blade.php</file>
+            <file>file:/home/USERS/ELEVES/SNIR2017/ecousin/remote/ConfigurationBaies/resources/views/accueil.blade.php</file>
+            <file>file:/home/USERS/ELEVES/SNIR2017/ecousin/remote/ConfigurationBaies/resources/views/inc/messages.blade.php</file>
+        </group>
+    </open-files>
+</project-private>

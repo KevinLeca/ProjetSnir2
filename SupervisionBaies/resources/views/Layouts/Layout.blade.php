@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title>Supervision de Baies</title>
+        <title>Supervision</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <!-- jQuery library -->
@@ -11,11 +11,11 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
         <!-- <script src="script.js"></script> -->
         <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <!-- Pour mes graphs-->
-        <script src="https://code.highcharts.com/stock/highstock.js"></script>
-        <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-        <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
-        
+        <!-- For the charts -->	
+        <script src="http://code.highcharts.com/highcharts.js"></script> 
+        <script src="https://code.highcharts.com/highcharts-more.js"></script>  
+        <script src="http://code.highcharts.com/modules/exporting.js"></script> 
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
     </head>
 
 

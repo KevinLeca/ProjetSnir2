@@ -9,7 +9,7 @@
 
 <!-- ------------------------- Formulaire de recherche ------------------------ -->
 <div class="container-fluid bg-1">
-    {!! Form::open(['url' => 'Alertes/submit']) !!} <!-- ouverture du formulaire laravel -->
+    {!! Form::open(['url' => 'MesuresF/submit']) !!} <!-- ouverture du formulaire laravel -->
     <table class="table table-bordered">
         <tr>
             <!-- inputs de type date pour la selection de la plage horaire -->
@@ -23,12 +23,6 @@
             </td>
             <!-- --------------------------------------------------------- -->
             <td rowspan="2" style="padding-top: 2%">
-                <!-- Checkbox pour les alertes acquittées -->
-                {!! Form::checkbox('checkbox') !!}
-                {!! Form::label('checkbox', 'Alertes acquittées') !!} 
-                <!-- ------------------------------------ --> 
-
-
                 <!-- Bouton submit -->
                 {!! Form::submit('VALIDER') !!}
                 <!-- ------------- -->
